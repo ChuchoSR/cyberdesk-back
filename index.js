@@ -1,3 +1,5 @@
+require('dotenv').config(); // Carga las variables de entorno desde el archivo .env
+
 const express = require('express');
 const { Pool } = require('pg'); // 1. Importamos el conector de PostgreSQL
 const cors = require('cors');
@@ -8,13 +10,13 @@ app.use(express.json()); // Middleware para parsear JSON en las solicitudes
 const port = 3000;
 
 // 2. Armamos el "Cable de red" con las credenciales (Configuración del Pool)
-const db = new Pool({
+/* const db = new Pool({
     user: 'postgres',           // Tu usuario de PostgreSQL (suele ser postgres)
     host: 'localhost',          // La IP del servidor (como es tu PC, es localhost)
     database: 'project to practice', // <--- ¡CAMBIA ESTO! (ej: 'solotodo' o 'postgres')
     password: 'postgres',      // <--- ¡CAMBIA ESTO POR TU CLAVE DE PGADMIN!
     port: 5432,                 // El puerto físico por defecto de PostgreSQL
-});
+}); */
 
 // Ruta 1: El mensaje de bienvenida
 app.get('/', (req, res) => {
