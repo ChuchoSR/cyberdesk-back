@@ -9,6 +9,15 @@ app.use(cors()); // Middleware para habilitar CORS
 app.use(express.json()); // Middleware para parsear JSON en las solicitudes
 const port = 3000;
 
+const db = new Pool({
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
+})
+
+
 // 2. Armamos el "Cable de red" con las credenciales (Configuración del Pool)
 /* const db = new Pool({
     user: 'postgres',           // Tu usuario de PostgreSQL (suele ser postgres)
