@@ -34,6 +34,7 @@ app.use('/placas_madre', placaMadreRoutes);
 app.use('/procesadores', procesadoresRoutes);
 app.use('/refrigeracion', refrigeracionRoutes);
 app.use('/tarjetas_video', tarjetaGraficaRoutes);
+app.use('/ensambles', require('./routes/ensambles'));
 
 // Encendemos el motor
 app.listen(port, () => {
