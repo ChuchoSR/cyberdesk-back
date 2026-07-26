@@ -35,13 +35,7 @@ router.get('/', async (req, res) => {
     try {
         // Le decimos al router: "Espera (await) a que la base de datos responda esta consulta SQL"
         const respuesta = await db.query('SELECT * FROM procesadores;');
-        
-        // Cuando llega la respuesta, sacamos las filas (rows) y las mandamos como JSON
-
-        setTimeout(() => {
-            res.json(respuesta.rows);
-        }, 2000);
-
+        res.json(respuesta.rows); // Devolvemos la lista de procesadores en formato JSON
         
     } catch (error) {
         // Si el cable está roto o la clave está mal, mostramos el error en la consola
